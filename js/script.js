@@ -22,8 +22,10 @@ const text = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ]
 
-let pointer = 3;
+// creo un puntatore che memorizza l'elemento attivo nelle classi
+let pointer = 0;
 
+// faccio un ciclo per inizializzare e aggiungere il contenuto al mio html
 for (let i = 0; i < items.length; i++) {
     if(i == pointer){
         document.querySelector(".slider").innerHTML +=
@@ -62,12 +64,14 @@ for (let i = 0; i < items.length; i++) {
     }
 }
 
+// creo gli array delle classi dell'html
 const btn1 = document.getElementById("btn1");
 const btn2 = document.getElementById("btn2");
 let slider = document.getElementsByClassName("item");
 let titleArray = document.getElementsByClassName("title");
 let cardArray = document.getElementsByClassName("card");
 
+//inizializzo il pulsante 1 e con un ciclo else controllo il puntatore in modo che si abbia un ciclo infinito
 btn1.addEventListener("click", function(){
 
     slider[pointer].classList.remove("active");
@@ -86,6 +90,7 @@ btn1.addEventListener("click", function(){
     cardArray[pointer].classList.add("active");
 });
 
+// faccio la stessa cosa del bottone 1 (ma con if/else diverso)
 btn2.addEventListener("click", function () {
 
     slider[pointer].classList.remove("active");
